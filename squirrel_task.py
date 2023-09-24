@@ -36,8 +36,19 @@ dictionary["Count"] = count_list
 
 squirrel_number = pandas.DataFrame(dictionary)
 print(squirrel_number)
+data.to_csv("squirrel_number.csv")
 
 
 
 
+# Angela's
+grey_squirrels_count = len(data[data["Primary Fur Color"] == "Gray"])
+cinnamon_squirrels_count = len(data[data["Primary Fur Color"] == "Cinnamon"])
+black_squirrels_count = len(data[data["Primary Fur Color"] == "Black"])
 
+data_dictionary = {
+    "Fur Color": ["Gray", "Cinnamon", "Black"],
+    "Count": [grey_squirrels_count, cinnamon_squirrels_count, black_squirrels_count]
+}
+df = pandas.DataFrame(data_dictionary)
+# df.to_csv(squirrel_number.csv)
